@@ -35,7 +35,7 @@
     {% endblock %}
 
     {% block styles %}
-    <link rel="stylesheet" href="{{url_for('.static', filename='css/webapp.min.css')}}?v=0.0.3">
+    <link rel="stylesheet" href="{{url_for('.static', filename='css/webapp.min.css')}}?v=0.0.4">
     {% endblock %}
   </head>
   <body class="{% block bodyclass %}default{% endblock %}">
@@ -80,7 +80,7 @@
     {% endblock %}
 
     {% block scripts %}
-    <script src="{{url_for('.static', filename='js/webapp.min.js')}}?v=0.0.3"></script>
+    <script src="{{url_for('.static', filename='js/webapp.min.js')}}?v=0.0.4"></script>
     {% endblock %}
     {% if config.PIWIK_HOST and config.PIWIK_ID %}
     <!-- Piwik -->

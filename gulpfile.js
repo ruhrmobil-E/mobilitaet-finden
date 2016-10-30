@@ -50,7 +50,7 @@ gulp.task('concat-css', function() {
   return gulp.src(basePaths.temp + 'css/base.css')
     .pipe(plumber())
     .pipe(rename({suffix: '.min'}))
-//    .pipe(cssnano({discardComments: {removeAll: true}}))
+    .pipe(cssnano({discardComments: {removeAll: true}}))
     .pipe(concat('webapp.min.css'))
     .pipe(gulp.dest(basePaths.target + 'css/'));
 });
@@ -76,7 +76,7 @@ gulp.task('concat-js', function() {
         basePaths.temp + 'js/9webapp/webapp.js'
       ])
     .pipe(concat('webapp.min.js'))
-//    .pipe(uglify())
+    .pipe(uglify())
     .pipe(gulp.dest(basePaths.target + './js/'));
 });
 
