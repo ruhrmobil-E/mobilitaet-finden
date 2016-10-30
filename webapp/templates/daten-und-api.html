@@ -18,7 +18,7 @@
         <tbody>
           {% for sharing_provider in sharing_providers %}
           <tr>
-            <td><a href="{{ sharing_provider.website }}">{{ sharing_provider.name }}</a></td>
+            <td><a href="/anbieter/{{ sharing_provider.slug }}">{{ sharing_provider.name }}</a></td>
             <td>{{ sharing_provider.licence }}</td>
           </tr>
           {% endfor %}

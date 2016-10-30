@@ -10,7 +10,7 @@
   {% for sharing_provider in sharing_providers %}
   <div class="row-fluid">
     <div class="col-md-12">
-      <h2>{{ sharing_provider.name }}</h2>
+      <h2><a href="/anbieter/{{ sharing_provider.slug }}">{{ sharing_provider.name }}</a></h2>
       <p>{{ sharing_provider.descr_short }}</p>
     </div>
   </div>
