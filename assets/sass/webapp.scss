@@ -1,0 +1,257 @@
+/* basic layout */
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* top menu */
+
+#header {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+#navbar-box {
+  max-width: 1080px;
+  margin: 0px auto;
+}
+
+.home #navbar-box {
+  max-width: none;
+}
+
+#header nav {
+  border-radius: 0;
+  background-color: transparent;
+}
+
+#header .nav-link {
+  color: rgba(0, 0, 0, 0.8);
+}
+
+#header .dropdown-menu {
+  left: -20px;
+  margin-top: 9px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-top-width: 0;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+@media only screen and (max-width: map-get($grid-breakpoints, 'md') - 1px) {
+  #search {
+    display: none;
+  }
+  
+  #navbar-header {
+    clear: both;
+  }
+  
+  #navbar-header .nav {
+    width: 100%;
+  }
+  
+  #navbar-header .nav li {
+    text-align: center;
+  }
+  
+  #header .dropdown-menu {
+    float: none;
+    left: 0;
+    margin-top: 0;
+    position: static;
+    border-width: 0;
+    border-radius: 0;
+    background-color: transparent;
+  }
+  
+  #header .dropdown-menu .dropdown-item {
+    text-align: center;
+  }
+}
+
+.default #content {
+  padding: 20px 20px 50px 20px;
+}
+
+.default h2 {
+  margin-top: 20px;
+}
+
+.default table {
+  width: 100%;
+}
+
+.default td, .default th {
+  padding: 5px 10px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+code a {
+  color: #bd4147;
+}
+
+#footer {
+  padding: 15px;
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+/* right search */
+
+#search-toggle {
+  display: none;
+}
+
+.home #search-toggle {
+  display: block;
+}
+
+#search {
+  display: none;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 280px;
+  padding: 15px;
+  z-index: 5000;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+#search > div {
+  width: 250px;
+}
+
+/* home page */
+
+.home #header {
+  display: none;
+  z-index: 10000;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+#map {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.vector-marker .fa {
+  z-index: 500;
+}
+
+.leaflet-fade-anim .leaflet-tile {
+  will-change: auto !important;
+}
+
+#startquestion {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.8);
+  z-index: 5000;
+}
+
+#startquestion > div {
+  position: absolute;
+  text-align: center;
+  margin: 0;
+}
+
+@media only screen and (max-width: map-get($grid-breakpoints, 'sm') - 1px) {
+  #startquestion > div {
+    left: 0;
+    right: 0;
+    transform: (-50%, 0);
+    width: auto;
+    margin: 0 15px;
+  }
+}
+
+@media only screen and (min-width: map-get($grid-breakpoints, 'sm')) {
+  #startquestion > div {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    text-align: center;
+  }
+}
+
+#startquestion > div > form > p {
+  margin-top: 15px;
+}
+
+#startquestion button {
+  margin-top: 20px;
+}
+
+#important-links {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 10000;
+  padding: 10px;
+}
+
+
+#loading-overlay {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+#loading-overlay div {
+  margin-left: -200px;
+  margin-top: -100px;
+  width: 400px;
+  height: 165px;
+  padding-top: 35px;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 20px;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.leaflet-bottom .leaflet-control-zoom.leaflet-control {
+  margin-bottom: 25px;
+}
+
+#map-attribution {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1500;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  font-size: 11px;
+}
+
+/* forms */
+
+.bootstrap-multiselect {
+  display: block;
+}
+
+.dropdown-menu {
+  right: 0;
+}
+
+.multiselect-container {
+  z-index: 3000;
+}
+
+form .btn {
+  border: 1px solid rgba(0, 0, 0, 0.15);
+}

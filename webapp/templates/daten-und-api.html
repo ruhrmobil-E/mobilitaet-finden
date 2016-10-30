@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="container">
+  <div class="row-fluid">
+    <div class="col-md-12">
+      <h1>Daten &amp; API</h1>
+      <p>Eine Informationsplattform ist immer nur so gut wie die ihr zugrunde liegenden Daten. Daher gleichen wir stündlich alle Daten mit den Datenquellen ab. Bei Free-Systemen streben wir noch eine schnellere Aktualisierung an, da wir aber die Server der Anbieter nicht überlasten wollen, wurde dies zunächst zurückgestellt.</p>
+      <h2>Datenquellen</h2>
+      <p>Die Daten auf dieser Website werden wenn möglich via offener API oder als offener Datensatz importiert. Wenn dies nicht möglich ist, werden die APIs der Buchungssysteme verwendet. Liegt selbst das nicht vor, wird auf einen Scraper zurückgegriffen. Folgende Datenquellen werden zur Zeit verwendet:</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Anbieter</th>
+            <th>Lizenz</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for sharing_provider in sharing_providers %}
+          <tr>
+            <td><a href="{{ sharing_provider.website }}">{{ sharing_provider.name }}</a></td>
+            <td>{{ sharing_provider.licence }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      <p>Außerdem werden für die Regions-Suche <a href="https://www.destatis.de/DE/ZahlenFakten/LaenderRegionen/Regionales/Gemeindeverzeichnis/Gemeindeverzeichnis.html">die Gemeinden aus dem Gemeindeverzeichnis-Informationssystem GV-ISys des Bundesamtes für Statistik verwendet</a>.</p>
+      <h2>Schnittstelle (API)</h2>
+      <p>Über die JSON-Schnittstelle können die auf der Seite präsentierten Daten abgegriffen werden. Aber Achtung: die Schnittstelle ist noch nicht stabil, da das Datenmodell noch nicht final ist. Die Stationen können abgerufen werden unter:</p>
+      <p>
+        <code><a href="/api/providers">/api/providers</a></code>
+      </p>
+      <p>
+        <code><a href="/api/stations">/api/stations</a></code>
+      </p>
+      <p>Die ausgelieferten JSON-Objekte ist weitestgehend selbsterklärend. Unter <code>next</code> erhält man die nächsten 100 Objekte. Der Wert <code>null</code> bedeutet, dass (noch) keine Daten vorliegen.</p>
+    </div>
+    <h2>Fehler melden</h2>
+    <p>Das Projekt wurde gerade erst gestartet, so dass noch einige Daten fehlen und einige Fehler zu finden sein dürften. Um Fehler zu melden oder Erweiterungen vorzuschlagen, nutzen Sie bitte den <a href="https://github.com/ruhrmobil-E/mobilitaet-finden/issues">Bugtracker auf Github</a>.</p>
+    <h2>Open Source</h2>
+    <p>Die Software hinter mobilität finden steht unter der Lizenz BSD 3-Clause. Der Quellcode befindet sich <a href="https://github.com/ruhrmobil-E/mobilitaet-finden">auf Github</a>.</p>
+  </div>
+</div>
+{% endblock %}

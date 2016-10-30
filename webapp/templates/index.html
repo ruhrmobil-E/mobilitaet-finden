@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block bodyclass %}home{% endblock %}
+
+{% block headerslogan %}{% endblock %}
+
+{% block content %}
+<div class="container"><div id="map"></div><div id="map-attribution">Script: <a href="http://leafletjs.com/">Leaflet</a> | Kacheln: <a href="https://www.mapbox.com/">Mapbox</a> | Daten: <a href="/providers">Anbieter</a></div></div>
+<div id="search">
+  <div>
+    <form name="search-form" id="search-form">
+      <label for="search-type">Mobilitätsform</label>
+      <select name="search-type" id="search-type" class="form-control" multiple="multiple">
+        <option value="1" selected="selected">Fahrrad</option>
+        <option value="2" selected="selected">Lastenrad</option>
+        <option value="3" selected="selected">Fahrradanhänger</option>
+        <option value="4" selected="selected">PKW</option>
+        <option value="5" selected="selected">Transporter</option>
+      </select>
+      <label for="search-location">Ort</label>
+      <input type="text" name="search-location" id="search-location" autocomplete="off" class="form-control">
+    </form>
+  </div>
+</div>
+<div id="startquestion">
+  <div>
+    <h1>mobilität finden</h1>
+    <form name="startquestion-form" id="startquestion-form">
+      <p>Ich suche ein</p>
+      <select name="startquestion-type" id="startquestion-type" class="form-control" multiple="multiple">
+        <option value="1" selected="selected">Fahrrad</option>
+        <option value="2" selected="selected">Lastenrad</option>
+        <option value="3" selected="selected">Fahrradanhänger</option>
+        <option value="4" selected="selected">PKW</option>
+        <option value="5" selected="selected">Transporter</option>
+      </select>
+      <p>in der Nähe von</p>
+      <input type="text" name="startquestion-location" id="startquestion-location" autocomplete="off" class="form-control">
+      <button class="btn form-control" name="startquestion-submit" id="startquestion-submit">finden</button>
+    </form>
+  </div>
+</div>
+<div id="important-links"><a href="/datenschutz">Datenschutz</a> | <a href="/impressum">Impressum</a></div>
+{% endblock %}
+
+{% block footer %}{% endblock %}
+
+{% block scripts %}
+<div id="loading-overlay"><div><p><i class="fa fa-cog fa-spin fa-3x fa-fw"></i></p><p>Lade Daten.</p></div></div>
+<script>
+  var mobilitaet_finden_conf = {
+    mapbox_token: '{{ config.MAPBOX_TOKEN }}'
+  }
+</script>
+{{ super() }}
+{% endblock %}

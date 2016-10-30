@@ -1,0 +1,27 @@
+# Python
+config.py
+*.py[cod]
+
+# KomodoEdit
+*.komodoedit
+.komodotools
+*.komodoproject
+
+# Mac OS-X
+.DS_Store
+._*
+*~
+
+# Enviroment
+venv
+migrations
+log/*
+
+# Node, Bower, SASS
+.sass-cache
+bower_components
+node_modules
+tmp
+
+# Data
+import/*

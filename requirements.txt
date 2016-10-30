@@ -1,0 +1,12 @@
+Flask
+Flask-Script
+Flask-SQLAlchemy
+Flask-Migrate
+Flask-Elasticsearch
+mysql-python
+Flask-WTF
+unicodecsv
+translitcodec
+lxml
+requests
+elasticsearch>=2.0.0,<3.0.0
