@@ -23,6 +23,5 @@ db = SQLAlchemy(app)
 es = FlaskElasticsearch(app)
 
 from models import *
-from forms import *
 
 import webapp.views
