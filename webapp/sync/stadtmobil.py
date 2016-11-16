@@ -23,17 +23,17 @@ def sync():
   
   r = requests.get(base_url, verify=False)
   xml_data = etree.fromstring(r.text.encode('utf-8'), parser=etree.XMLParser(recover=True))
-  sharing_provider = SharingProvider.query.filter_by(slug='stadtmobile')
+  sharing_provider = SharingProvider.query.filter_by(slug='stadtmobil')
   if sharing_provider.count():
     sharing_provider = sharing_provider.first()
   else:
     sharing_provider = SharingProvider()
     sharing_provider.created = datetime.datetime.now()
-    sharing_provider.slug = 'stadtmobile'
+    sharing_provider.slug = 'stadtmobil'
     sharing_provider.active = 1
   
   sharing_provider.updated = datetime.datetime.now()
-  sharing_provider.name = 'StadtMobile'
+  sharing_provider.name = 'stadtmobil'
   db.session.add(sharing_provider)
   db.session.commit()
   
